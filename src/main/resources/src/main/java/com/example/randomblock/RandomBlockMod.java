@@ -18,12 +18,10 @@ public class RandomBlockMod implements ModInitializer {
     @Override
     public void onInitialize() {
         PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, blockEntity) -> {
-            // Chỉ chạy ở phía Server và không kích hoạt khi đang ở chế độ Sáng tạo (Creative)
             if (world.isClient() || player.isCreative()) {
                 return;
             }
 
-            // Lọc danh sách tất cả các khối có item hợp lệ trong game
             List<Block> validBlocks = Registries.BLOCK.stream()
                     .filter(block -> block != Blocks.AIR
                             && block != Blocks.CAVE_AIR
@@ -43,7 +41,6 @@ public class RandomBlockMod implements ModInitializer {
                 Block randomBlock = validBlocks.get(random.nextInt(validBlocks.size()));
                 Item dropItem = randomBlock.asItem();
 
-                // Rớt 1 khối ngẫu nhiên tại vị trí vừa đào
                 ItemScatterer.spawn(
                         world,
                         pos.getX() + 0.5,
