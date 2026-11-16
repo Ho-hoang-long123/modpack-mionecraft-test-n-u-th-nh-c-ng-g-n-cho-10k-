@@ -38,9 +38,7 @@ java {
     targetCompatibility = JavaVersion.VERSION_21
 }
 
-// Bổ sung đoạn này để đảm bảo đóng gói đủ file .class vào jar chính
+// BÉO QUAN TRỌNG: Đoạn này ép Gradle nhét toàn bộ thư mục java/resources vào file jar chính
 tasks.named('jar', Jar) {
-    from('src/main/java') {
-        include '**/*.java'
-    }
+    from sourceSets.main.output
 }
