@@ -37,3 +37,10 @@ java {
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
 }
+
+// Bổ sung đoạn này để đảm bảo đóng gói đủ file .class vào jar chính
+tasks.named('jar', Jar) {
+    from('src/main/java') {
+        include '**/*.java'
+    }
+}
