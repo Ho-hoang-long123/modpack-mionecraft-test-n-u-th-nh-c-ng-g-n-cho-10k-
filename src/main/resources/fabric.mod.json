@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "randomblock",
+  "version": "${version}",
+  "name": "Random Block Drop",
+  "description": "Đào 1 khối bất kỳ sẽ nhận thêm 1 khối ngẫu nhiên.",
+  "authors": [
+    "CustomMod"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.randomblock.RandomBlockMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
