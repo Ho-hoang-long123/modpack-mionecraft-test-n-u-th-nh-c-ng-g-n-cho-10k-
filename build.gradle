@@ -23,6 +23,7 @@ dependencies {
 
 processResources {
     inputs.property "version", project.version
+
     filesMatching("fabric.mod.json") {
         expand "version": project.version
     }
@@ -36,9 +37,4 @@ java {
     withSourcesJar()
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
-}
-
-// BÉO QUAN TRỌNG: Đoạn này ép Gradle nhét toàn bộ thư mục java/resources vào file jar chính
-tasks.named('jar', Jar) {
-    from sourceSets.main.output
 }
