@@ -14,7 +14,6 @@ import net.minecraft.util.math.random.Random;
 import java.util.List;
 
 public class RandomBlockMod implements ModInitializer {
-
     @Override
     public void onInitialize() {
         PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, blockEntity) -> {
