@@ -3,7 +3,7 @@
   "id": "randomblock",
   "version": "${version}",
   "name": "Random Block Drop",
-  "description": "Đào 1 khối bất kỳ nhận 1 khối ngẫu nhiên",
+  "description": "Đào 1 khối nhận 1 khối ngẫu nhiên",
   "authors": ["Long"],
   "contact": {},
   "license": "MIT",
